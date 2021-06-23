@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Image</title>
+
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="top">
+        <div class="upload">
+          <input type='file' />
+        </div>
+      </div>
+      <div class="row">
+        <div class="left">
+          <div class='image'>
+            <img src="images/about-img.png" alt="camera" id='img'>
+          </div>
+        </div>
+
+        <div class="right">
+          <div class="metadata">
+
+            <div class="label-1 labels">
+              <label for="greyscale">Greyscale</label>
+              <span id="grayOutput">0</span>
+              <input type="range" min="0" max="100" id="greyRange" value="0">
+            </div>
+
+            <div class="label-2 labels">
+              <label for="border">Border</label>
+              <span id="borderOutput">0</span>
+              <input type="range" id="borderRange" min="0" max="100" value="0">
+            </div>
+
+            <div class="label-3 labels">
+              <label for="color">Border Color</label>
+              <input type="color" id="borderColor">
+            </div>
+
+            <div class="label-4 labels">
+              <label for="border">Radius</label>
+              <span id="radiusOutput">0</span>
+              <input type="range" min="0" max="50" id="radiusRange" value="0">
+            </div>
+
+            <div class="label-5 labels">
+              <button id="flipRangeX">Flip Horizontally</button>
+              <button id="flipRangeY">Flip Vertically</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="js/app.js"></script>
+  </body>
+
+</html>

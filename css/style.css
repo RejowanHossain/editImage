@@ -1,0 +1,129 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'poppins';
+}
+
+.container {
+    width: 1170px;
+    margin: 0 auto;
+    height: 100vh;
+}
+
+.row {
+    display: flex;
+    height: 100%;
+}
+
+.top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.left {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    padding-top: 120px
+}
+
+.right {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.metadata {
+    width: 70%;
+}
+
+.labels {
+    width: 100%;
+    margin-top: 25px;
+    position: relative;
+}
+
+.labels:first-child {
+    margin-top: 0;
+}
+
+input {
+    width: 100%;
+}
+
+.image {
+    width: 350px;
+    height: 350px;
+}
+
+.image img {
+    width: 100%;
+}
+
+span {
+    position: absolute;
+    right: 0;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    background: cornflowerblue;
+    cursor: pointer;
+}
+
+
+/* these class gets toggled through javascript */
+
+.flippedX {
+    transform: scaleX(-1);
+}
+
+.flippedY {
+    transform: scaleY(-1);
+}
+
+
+/* responsive */
+
+@media only screen and (max-width: 1250px) {
+    .container {
+        height: auto;
+        width: auto;
+    }
+    .row {
+        align-items: center;
+        flex-direction: column;
+    }
+    .label-7 {
+        display: flex;
+    }
+    button {
+        line-height: 1;
+    }
+    button:first-child {
+        margin-right: 10px;
+    }
+    .left {
+        width: 100%;
+        padding-top: 20px;
+    }
+    .right {
+        width: 100%;
+        margin-top: 150px;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    .container {
+        height: auto;
+    }
+    .row {
+        align-items: center;
+    }
+}
