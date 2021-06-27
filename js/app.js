@@ -6,8 +6,8 @@ var greyRange = document.getElementById('greyRange');
 var radiusRange = document.getElementById('radiusRange');
 var borderRange = document.getElementById('borderRange');
 var borderColor = document.getElementById('borderColor');
-var flipRangeX = document.getElementById('flipRangeX');
-var flipRangeY = document.getElementById('flipRangeY')
+
+
 
 // all the output values
 var grayOutput = document.getElementById("grayOutput");
@@ -16,7 +16,7 @@ var radiusOutput = document.getElementById("radiusOutput");
 
 
 // image upload functionality
-window.addEventListener('load', function() {
+function loadImage() {
     document.querySelector('input[type="file"]').addEventListener('change', function() {
         if (this.files && this.files[0]) {
             var img = document.getElementById('img');
@@ -27,6 +27,11 @@ window.addEventListener('load', function() {
             img.src = URL.createObjectURL(this.files[0]); // set src to blob url
         }
     });
+}
+
+// calling the function of image upload functionality
+window.addEventListener('load', function() {
+    loadImage();
 });
 
 
@@ -57,41 +62,65 @@ radiusRange.oninput = function() {
 
 }
 
-// Horizontal flip functionality
-flipRangeX.addEventListener('click', function() {
-
-
-    // clicking on horizontal flip will change the inner text of the button through these codes
-    if (image.classList.toggle('flippedX')) {
-        this.innerText = 'Reset';
-    } else {
-        this.innerText = 'Flip Horizontally';
-    }
-
-    // If Horizontal flip is active other button will disabled with chunk of code
+// If Horizontal flip is active other button will disabled with chunk of code
+function horizontallButton() {
     if (flipRangeX.innerText != 'Flip Horizontally') {
         flipRangeY.setAttribute('disabled', true);
     } else {
         flipRangeY.disabled = false;
     }
+}
 
-})
 
-// vertical flip functionality
-flipRangeY.addEventListener('click', function() {
+// clicking on horizontal flip button will change the inner text of the button through these codes
+function horizontalButtonText() {
+    var flipRangeX = document.getElementById('flipRangeX');
 
-    // clicking on vertical flip will change the inner text of the button through these codes
-    if (image.classList.toggle('flippedY')) {
-        this.innerText = 'Reset';
+    if (image.classList.toggle('flippedX')) {
+        flipRangeX.innerText = 'Reset';
     } else {
-        this.innerText = 'Flip Vertically';
+        flipRangeX.innerText = 'Flip Horizontally';
     }
+}
 
-    // If Vertical flip is active other button will disabled with chunk of code
+
+
+// If Vertical flip is active other button will disabled with chunk of code
+function verticalButton() {
+
     if (flipRangeY.innerText != 'Flip Vertically') {
         flipRangeX.setAttribute('disabled', true);
     } else {
         flipRangeX.disabled = false;
     }
+}
+
+
+// clicking on vertical flip will change the inner text of the button through these codes
+function verticalButtonText() {
+    var flipRangeY = document.getElementById('flipRangeY')
+
+    if (image.classList.toggle('flippedY')) {
+        flipRangeY.innerText = 'Reset';
+    } else {
+        flipRangeY.innerText = 'Flip Vertically';
+    }
+}
+
+
+// horizontal flip functionality
+flipRangeX.addEventListener('click', function() {
+    horizontalButtonText();
+    horizontallButton();
+
+})
+
+
+
+// vertical flip functionality
+flipRangeY.addEventListener('click', function() {
+    verticalButtonText();
+    verticalButton();
+
 
 });
